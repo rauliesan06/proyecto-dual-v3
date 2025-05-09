@@ -44,4 +44,8 @@ Servidor: Uvicorn
 pip install -r requirements.txt
 
 # Comando para la inicialización del servidor backend en local
-python -m uvicorn app.main:app --reload
+Versión v2:
+python -m uvicorn app.v2.main:app --reload --port 8000
+
+Versión v1:
+python -m uvicorn app.v1.main:app --reload --port 8001
