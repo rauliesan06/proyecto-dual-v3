@@ -49,3 +49,20 @@ function validarFormulario(event) {
         console.error("Error:", error);
     });
 }
+
+function cargarCuentas(){
+    fetch('http://localhost:8000/importar_csv/', {
+        method: 'POST'
+    })
+    .then(response => {
+        if(response.ok){
+            alert("Cuentas cargadas correctamente en la base de datos")
+        } else{
+            alert("Error al cargar las cuentas en la base de datos")
+        }
+    })
+    .catch(error => { // Salta cuando el iban está repetido o cuando no hay conexión con el servidor
+        alert("Error de red o conexión: " + error.message);
+        console.error("Error:", error);
+    });
+}

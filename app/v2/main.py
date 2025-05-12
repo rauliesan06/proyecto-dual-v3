@@ -82,3 +82,17 @@ def eliminar_cuenta(iban: str, db: Session = Depends(get_db)):
 def mostrar_cuenta(iban: str, db: Session = Depends(get_db)):
     cuenta = db.query(Cuenta).filter(Cuenta.iban == iban).first()
     return cuenta
+
+@app.post("/importar_csv/")
+def importar_csv(db: Session = Depends(get_db)):
+    f = open("app/data/cuentas.csv", "r")
+    for line in f.readlines()[1:]:
+        iban, saldo = line.strip().split(",")
+        cuenta_existente = db.query(Cuenta).filter(Cuenta.iban == iban).first()
+        if cuenta_existente:
+            print(f"Cuenta {iban} ya existe, no se volverá a insertar")
+            continue
+        cuenta = Cuenta(iban=iban, saldo=float(saldo))
+        db.add(cuenta)
+    db.commit()
+    return {"mensaje":"Importación completada"}
