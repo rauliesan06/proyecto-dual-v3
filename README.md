@@ -25,11 +25,7 @@ Interfaz de usuario:
 
 Versión 1 (gestión en memoria interna)
 Versión 2 (almacenamiento en base de datos)
-
-
-
-# Estructura del proyecto
-![estructuraProyecto](https://github.com/user-attachments/assets/126018eb-6b1e-42b6-8b2b-325d1fd6c885)
+Versión 3 (carga de cuentas a la base de datos a partir de un csv)
 
 
 
