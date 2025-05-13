@@ -31,7 +31,7 @@ Versión 3 (carga de cuentas a la base de datos a partir de un csv)
 
 # Tecnologías utilizadas
 
-Backend: FastAPI, SQLAlchemy, Pydantic
+Backend: FastAPI, SQLAlchemy
 Base de datos: MySQL (con pymysql)
 Frontend: HTML, CSS, JavaScript
 Servidor: Uvicorn
