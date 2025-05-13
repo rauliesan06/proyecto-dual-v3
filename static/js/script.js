@@ -39,6 +39,7 @@ function validarFormulario(event) {
         if (response.ok){
             document.getElementById('iban').value = "";
             document.getElementById('saldo').value = "";
+            alert("Cuenta registrada correctamente");
         } else{
             alert("Algo salió mal");
             console.log("Error al registrar la cuenta " + response.status);
