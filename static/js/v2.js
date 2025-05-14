@@ -45,8 +45,8 @@ function mostrarCuentas(){
         .then(data => {
             let fila = "";
             data.forEach(cuenta => {
-                fila += '<tr><td>'+cuenta.iban+'</td>'
-                fila += '<td>'+cuenta.saldo+'€</td></tr>'
+                fila += '<tr><td>'+cuenta.iban+'</td>';
+                fila += '<td>'+cuenta.saldo+'€</td></tr>';
             })
             tabla.innerHTML = fila;
         })
