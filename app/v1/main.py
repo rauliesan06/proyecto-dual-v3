@@ -32,12 +32,6 @@ def registrar_cuenta(iban: str, saldo: float):
         raise HTTPException(status_code=400, detail="Cuenta ya existe")
     cuentas[iban] = Cuenta(iban=iban, saldo=saldo)
     return {"mensaje": "Cuenta registrada correctamente"}
-#@app.post("/registrar_cuenta/")
-#def registrar_cuenta(cuenta: Cuenta):
-#    if cuenta.iban in cuentas:
-#        raise HTTPException(status_code=400, detail="Cuenta ya existe")
-#    cuentas[cuenta.iban] = cuenta
-#    return {"mensaje":"Cuenta registrada correctamente"}
 
 @app.get("/mostrar_cuentas/")
 def mostrar_cuentas():

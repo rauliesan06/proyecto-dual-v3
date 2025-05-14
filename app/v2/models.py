@@ -15,7 +15,7 @@ class Bizum(Base):
     __tablename__ = 'bizum'
     id = Column(Integer, primary_key=True, index=True)
     cuenta_id = Column(String(24), ForeignKey("cuenta.iban"), nullable=False)
-    tipo_operacion = Column(String(10))  # 'pagar' o 'solicitar'
+    tipo_operacion = Column(String(10))
     monto = Column(Float)
     fecha = Column(DateTime, default=datetime.utcnow)
 

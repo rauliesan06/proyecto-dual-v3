@@ -14,7 +14,7 @@ app = FastAPI()
 ## Habilita CORS en FastAPI
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En desarrollo, permite todas las URLs
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
