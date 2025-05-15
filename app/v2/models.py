@@ -9,7 +9,7 @@ class Cuenta(Base):
     iban = Column(String(24), unique=True, nullable=False)
     saldo = Column(Float, default=0.0)
 
-    bizums = relationship("Bizum", back_populates="cuenta")
+    bizums = relationship("Bizum", back_populates="cuenta") # Crea la relación entre los dos objetos por una clave foránea
 
 class Bizum(Base):
     __tablename__ = 'bizum'
@@ -19,4 +19,4 @@ class Bizum(Base):
     monto = Column(Float)
     fecha = Column(DateTime, default=datetime.utcnow)
 
-    cuenta = relationship("Cuenta", back_populates="bizums")
+    cuenta = relationship("Cuenta", back_populates="bizums") # Crea la relación entre los dos objetos por una clave foránea
